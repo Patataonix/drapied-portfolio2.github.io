@@ -1,0 +1,303 @@
+body {
+margin:0 100px;
+background-color:#F7EBCC;
+}
+body::before, #tweet::after {
+	content:'';
+	width: 100%;
+	height: 3px;
+	background-image:url('Site_fichiers/separateur.png'); 
+	position: absolute;
+	top:165px;
+	left:0;
+}
+header , footer {
+	position:relative;
+	width: calc(100vw - 100px);
+	left:-100px;
+	padding-left: 100px;
+}
+header {
+	padding-bottom: 50px;
+}
+footer {
+	margin:100px 0 0 0;
+	padding-top:10px;
+	height:150px;
+}
+#tweet::after {
+	height: 3px;
+	top:auto;
+	bottom: 120px;
+	width:100vw;
+	left: -100px;
+	
+}
+#tweet::before {
+	content:'';
+	width: 54px;
+	height: 30px;
+	background-image:url('Site_fichiers/ico_top.png'); 
+	position: absolute;
+	bottom: 95px;
+	z-index:1;
+	left:calc(50vw - 127px);
+}
+#bloc_page {
+	font-family:'Arial';
+}
+
+#titre_principal {
+	position:relative;
+	width: 400px;
+}
+
+#logo h1 {
+	position:absolute;
+	top:50px;
+	left:90px;
+	
+	margin:0;
+	font-family: 'BallPark';
+	font-weight:lighter;
+	font-size: 50px;
+}
+#logo img {
+	width: 80px;
+
+}
+#titre_principal h2 {
+	margin:0;
+	font-size:27px;
+	font-weight:normal;
+}
+header, footer {
+	background-color : #FEF7D9
+}
+
+nav {
+	position:absolute;
+	right: 15px;
+	top: 50px;
+	width: 600px;
+}
+nav li {
+	display: inline-block;
+	font-size:27px;
+	margin:0 10px;
+	font-family:'dayrom';
+	text-transform: uppercase;
+}
+nav a {
+	color:black;
+	text-decoration:none;
+
+}
+nav li:first-child a, nav li a:hover {
+	color:#760001;
+	text-decoration:underline;
+	font-weight: bold;
+}
+#banniere_image {
+	position:relative;
+	top:-120px;
+	background-image: url("Site_fichiers/sanfrancisco.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-top: 150px;
+	height:300px;
+	border-radius:10px;
+}
+
+#banniere_image a {
+	text-decoration:none;
+}
+ 
+#banniere_description {
+	font-family: 'arial';
+	color:white;
+	background-color: rgba(0,0,0,0.5);
+	position:absolute;
+	bottom:0;
+	width:calc(100% - 10px);
+	line-height:40px;
+	padding-left:10px;
+	border-radius:0 0 10px 10px;
+}
+
+.bouton_rouge {
+	position:absolute;
+	right: 10px;
+	top: 5px;
+	color:white;
+	padding:0 10px;
+	background:linear-gradient(#FF080B,#790405);
+	border-radius: 5px;
+	border:2px solid #431114;
+	line-height:30px;
+}
+
+section article h1 {
+	display:inline-block;
+	font-size:30px;
+	position:relative;
+	font-family:'dayrom';
+	text-transform: uppercase;
+	font-weight:lighter;
+	margin: 0 0 25px 75px;
+	
+}
+
+article h1 img {
+	width:60px;
+	position:absolute;
+	left: -70px;;
+	top:-15px;
+}
+
+article {
+	margin-top:-50px;
+	position:relative;
+	width:calc(100% - 400px);
+
+}
+
+
+
+aside {
+	color:white;
+	border-radius:10px;
+	position:absolute;
+	right:100px;
+	top: 550px;;
+	
+	background-color: rgba(112,107,100,0.85);
+	
+	width:350px
+}
+
+aside img {
+	width:50px;
+	margin: 10px 5px 0px 6px;
+}
+
+aside h1 {
+	margin-left:60px;
+	margin-bottom: 160px;
+	text-transform:uppercase;
+	font-family:'dayrom';
+	font-weight:lighter;
+}
+
+#fleche_bulle {
+	position:absolute;
+	width:15px;
+	top:175px;
+	left:-20px;
+	opacity: 0.85;
+}
+
+aside p {
+	margin: 10px 20px;
+}
+
+#tweet {
+	position:relative;
+}
+#tweet h1 {
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight:normal;
+	font-family:'dayrom';
+}
+
+#mes_photos {
+	position:relative;
+	top:-110px;
+	left: 400px;
+	width:500px;
+}
+#mes_photos h1 {
+	
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight:normal;
+	font-family:'dayrom';
+}
+#mes_photos img {
+	position:relative;
+	left: -20px;
+	margin: 0 0 0 20px;
+	border: 2px solid rgb(2, 2, 78);
+	border-radius: 2px;
+}
+
+#mes_amis {
+	height:50px;
+	position:relative;
+	top:-245px;
+	left:800px;
+	width:250px;
+	
+}
+
+#mes_amis h1 {
+	position:relative;
+	left:20px;
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight:normal;
+	font-family:'dayrom';
+
+}
+#photo_zozor img {
+	position:absolute;
+	top:40px;
+	left:95px;
+	width:160px;
+}
+#listes_amis {
+	height:100px;
+}
+
+#listes_amis ul li::marker {
+	content:url("Site_fichiers/ico_liensexterne.png")" ";
+	
+}
+
+#listes_amis ul li a {
+	text-decoration:none;
+	color:red;
+}
+
+#listes_amis ul:nth-child(2) {
+	position:relative;
+	left:150px;
+	bottom:90px;
+	width:200px;
+}
+
+article span {
+	color:#ff0000;
+	text-decoration: underline
+}
+
+@font-face {
+	
+	font-family: 'dayrom' ;
+	src:url('Site_fichiers/polices/dayrom.eot');
+	src:url('Site_fichiers/polices/dayrom.eot?#iefix') format('embedded-opentype'),
+		url('Site_fichiers/polices/dayrom.woff') format('woff'),
+		url('Site_fichiers/polices/dayrom.ttf') format('truetype'),
+		url('Site_fichiers/polices/dayrom.svg') format('svg');
+}
+
+@font-face {
+	font-family: 'ballPark';
+	src:url('Site_fichiers/polices/ballpark.eot');
+	src:url('Site_fichiers/polices/ballpark.eot?#iefix') format('embedded-opentype'),
+		url('Site_fichiers/polices/ballpark.woff') format('woff'),
+		url('Site_fichiers/polices/ballpark.ttf') format('truetype'),
+		url('Site_fichiers/polices/ballpark.svg') format('svg');
+
+}

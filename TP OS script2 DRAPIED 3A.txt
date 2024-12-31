@@ -1,0 +1,40 @@
+TP UNIX SCRIPT 2
+
+Exo 1
+
+#!/bin/bash
+
+#On vérifie qu'il y ait au moins deux paramètres
+if test^$# -lt 2
+then
+	echo "Usage^$0 : <MOT> <FICHIER>"
+	exit 1
+fi
+
+#On met le mot recherché dans une variable et on le supprime des paramètres
+mot=$1
+shift
+
+#On recherche le mot dans tous les noms de fichiers données
+while test $# -ge 1
+do
+	if test -f $1 #On vérifie que le fichier existe 
+	then
+		if grep $mot $1 #On vérifie la présence du mot
+		then
+			echo "Le mot $mot se trouve dans le fichier $1."
+			shift 
+		else 
+			echo "Le mot $mot ne se trouve pas dans le fichier 
+			shift
+		fi
+	else 
+		echo "$1 n'existe pas ou n'est pas un fichier ordinaire." 
+		shift
+	fi
+done
+exit 0
+
+
+
+Exo 2

@@ -1,0 +1,55 @@
+TP OS TR et REDIRECTION
+
+Utilisation de tr → transforme ou supprime un ensemble de caractères 
+utilisation du < pour envoyer un fichier txt dans le tr
+
+1.	Donner la commande permettant d’enregistrer dans un fichier ~/res.txt le contenu de votre répertoire personnel (ie la liste des fichiers/répertoires de votre répertoire personnel). Vérifier en visualisant le contenu de ~/res.txt
+
+	ls -l .> res.txt
+
+2.	Donner la commande permettant d’ajouter au fichier ~/res.txt (obtenu à la question 1) le chemin de notre répertoire de travail. Vérifier en visualisant le contenu de ~/res.txt
+
+	pwd . >> res.txt
+
+3.	Afficher le nombre de commandes Unix situées dans /bin et le nombre de commandes situées dans /usr/bin. Sur Barbara, vous devez trouver 172 pour /bin et un peu plus de 1000 pour /usr/bin.
+Aide : 
+•	chaque fichier (ordinaire ou lien) de /bin et /usr/bin correspond à une commande unix
+•	avant de compter visualiser les résultats de la commande pour vérifier que vous compter bien les fichiers 
+
+	ls /bin | wc
+	ls /usr/bin | wc
+
+4.	Copier le fichier centdix.txt que vous trouverez sur Moodle dans votre répertoire d'accueil ou sur Barbara dans /home/unix. Afficher les lignes de 20 à 50 du fichier ~/centdix.txt  et vérifier les lignes affichées.
+
+	cp /home/unix/centdix.txt .
+
+
+5.	Comparez les exécutions des deux commandes :
+grep ^2 centdix.txt  | tail -n 1
+grep ^2 centdix.txt | tail -n 1 centdix.txt
+
+Que concluez vous sur l’utilisation d’un | ?
+
+	Si on respécifie un chemin ou un fichier après le |, ce dernier utilisera le chemin indiqué au lieu
+	de prendre le résultat le précédent, le rendant potentiellement obsolète.	
+
+
+6.	Afficher les deux premières lignes du centdix.txt trié par ordre alphabétique.
+
+	sort centdix.txt | head -n 2	
+
+7.	Afficher le nombre de répertoires de l’arborescence du répertoire tp1 (réalisé au TP1).
+
+	find tp1 -type d | wc
+
+8.	 Afficher les lignes du fichier centdix.txt qui contiennent la chaîne 202 après avoir remplacé tous les '1' par des '2'.
+
+	tr 1 2 < centdix.txt | grep -n 202
+
+9.	 Créer un fichier texte contenant quelques phrases avec des sauts de lignes et mélangeant des lettres minuscules et majuscules. Afficher à l'écran le contenu de ce fichier dans lequel les sauts de lignes seront supprimés.
+
+	tr -d [:space:] < fichier.txt
+
+10.	 Afficher à l'écran le contenu de ce fichier en faisant en sorte que toutes les lettres  soient mises en majuscule.
+
+	tr [:lower:] [:upper:] < fichier.txt

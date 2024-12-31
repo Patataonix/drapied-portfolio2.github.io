@@ -1,0 +1,76 @@
+TP UNIX REVISION
+
+1.Créer dans votre home directory : un répertoire de nom REVISION puis créer :
+- les fichiers de type répertoires ~/REVISION/COURS et ~/REVISION/TP
+- les fichiers de type ordinaires ~/REVISION/COURS/f1 ~/REVISION/COURS/f2 ~/REVISION/COURS/fich ~/REVISION/TP/tp1 ~/REVISION/TP/tp2
+
+mkdir REVISION
+mkdir REVISION/COURS
+mkdir REVISION/TP
+touch REVISION/TP/tp1
+touch REVISION/TP/tp2
+touch REVISION/COURS/f1
+touch REVISION/COURS/f2
+touch REVISION/COURS/fich
+
+2.Modifier les droits de COURS pour que le propriétaire ait tous les droits, le groupe n’ait aucun droit et les autres aient le droit de passage
+
+chmod 701 REVISION/COURS
+
+3.Créer un fichier de type répertoire ~/CONTROLE
+
+mkdir CONTROLE
+
+
+4.Copier l’arborescence de fichier à partir de TP dans CONTROLE (vous devrez au final avoir ~/CONTROLE/TP/tp1 ~/CONTROLE/TP/tp2)
+
+cp -r REVISION/TP CONTROLE
+
+5.Déplacez vous dans COURS. Lister de manière détaillée les fichiers dont le nom termine par un chiffre.
+
+cd REVISION/COURS/
+ls -l  *[0-9]
+
+6.Déplacez vous dans votre répertoire d’accueil (home directory) avec un chemin relatif.
+
+cd ../..
+
+7.Chercher dans votre arborescence de fichiers depuis votre home directory tous les fichiers ordinaires dont le nom termine par un chiffre.
+
+find . -name "*[0-9]"  -type f
+
+8.Compter le nombre de fichiers ordinaires dont le nom termine par un chiffre dans  votre arborescence de fichiers depuis votre home directory.
+
+find -name "*[0-9]"  -type f | wc -l
+
+9.Sachant que la commande echo suivie d’une chaine de caractères affiche la chaine à l’écran (exemple : echo « Chaine à l’écran »), utiliser les redirections pour écrire du texte dans le fichier ~/REVISION/TP/tp1
+
+echo Yipee ki yay > REVISION/TP/tp1
+
+10.Ajouter au fichier ~/REVISION/TP/tp1 la liste détaillée de vos fichiers contenus dans ~ et dans les sous-dossiers
+
+ls -lR >> REVISION/TP/tp1
+
+11.Afficher à l’écran les trois dernières lignes du fichier ~/REVISION/TP/tp1
+
+tail -3 REVISION/TP/tp1
+
+12.Ecrire les trois dernières lignes du fichier ~/REVISION/TP/tp1 dans ~/CONTROLE/TP/tp2
+
+tail -3 REVISION/TP/tp1 >> CONTROLE/TP/tp2
+
+13.Ajouter « Fin » dans le fichier ~/CONTROLE/TP/tp2
+
+echo Fin > CONTROLE/TP/tp2
+
+14.Compter le nombre de lignes des fichiers ordinaires dont le nom termine par un chiffre dans  votre arborescence de fichiers depuis votre home directory.
+
+find . -type f -name "*[0-9]" -exec cat {} \; | wc -l
+
+15.Chercher les lignes commençant par « F » dans ~/CONTROLE/TP/tp2
+
+grep ^F CONTROLE/TP/tp2
+
+16.Déplacer fich dans CONTROLE
+
+find . -name fich -exec mv {} CONTROLE/ \;

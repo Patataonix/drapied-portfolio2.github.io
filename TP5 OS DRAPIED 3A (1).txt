@@ -1,0 +1,62 @@
+USAGE DU GREP
+
+grep '??' machin/truc.txt	affiche les lignes contenant '??'
+echo bonjour machin/truc.txt	écrit "bonjour" dans le fichier truc.txt
+
+1. Copier dans votre répertoire d’accueil les fichiers centdix.txt et grepTP.txt situés dans le fichier de type répertoire unix du schéma
+
+cp home/unix/centdix.txt home/unix/grepTP.txt .
+
+
+2. Affichez à l’écran le contenu des fichiers copiés
+
+cat grepTP.txt centdix.txt
+
+3. Modifier les droits en symbolique de centdix.txt pour avoir les droits de lecture et écriture au propriétaire, le droit de lecture au groupe et aucun droit aux autres.
+
+chmod a-rwx,u+rw,g+r centdix.txt
+
+4. Modifier les droits en octal de grepTP.txt pour avoir les droits de lecture et écriture au propriétaire, aucun droit au groupe et le droit de lecture aux autres.
+
+chmod 640 centdix.txt
+
+5. Affichez les 5 premières lignes du fichier centdix.txt
+
+head -n 5 centdix.txt
+
+6. Affichez le nombre de lignes du fichier centdix.txt
+
+wc -l centdix.txt
+
+7. Affichez le nombre de lignes des fichiers dont le nom termine par .properties situés dans le fichier de type répertoire scite du schéma. Vous devez trouver 20920 lignes au total.
+
+wc -l usr/share/scite/*.properties
+
+
+8. Afficher le contenu de tous les fichiers .properties dont le nom commence par SciTE situés dans le fichier de type répertoire scite du schéma
+
+cat usr/share/scite/SciTE*.properties
+
+9. Afficher les lignes du fichier grepTP.txt qui contiennent le mot chaine. Vous devez trouver trois lignes. Vérifiez en affichant le fichier.
+
+grep 'chaine' grepTP.txt
+
+10. Afficher les lignes du fichier grepTP.txt qui contiennent cpp. Vérifiez en affichant le fichier.
+
+grep 'cpp' grepTP.txt
+
+11. Afficher les lignes du fichier grepTP.txt qui commencent par la lettre C en majuscule. Vérifiez en affichant le fichier.
+
+grep '^C' grepTP.txt
+
+12. Afficher les lignes du fichier grepTP.txt qui terminent par la lettre p en minuscule. Vérifiez en affichant le fichier.
+
+grep 'p$' grepTP.txt
+
+13. Afficher la liste des fichiers dont le nom termine par .txt de votre home directory qui contiennent cpp
+
+grep 'cpp' *.txt 
+
+14. Afficher la liste des fichiers de votre home directory qui contiennent cpp
+
+grep -l 'cpp' .
